@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
 import { deletetUserSuccess, deleteUserFailure, signOutUserStart } from "../redux/user/userSlice.js";
-//import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 export default function Profile() {
   const {currentUser} = useSelector((state) => state.user)
@@ -31,6 +31,10 @@ export default function Profile() {
         <input type="text" placeholder='password' id='password' className='border p-3 rounded-lg' />
         <button className='bg-slate-700 text-white rounded-lg p-3 
         uppercase hover:opacity-95 disabled:opacity-80'>update</button>
+        <Link className='bg-green-800 text-white p-3 rounded-lg uppercase 
+          text-center hover:opacity-80'to={"/create-listing"}>
+            Create Listing
+        </Link>
       </form>
       <div className="flex justify-between mt-5">
         <span className='text-red-700 cursor-pointer'>Delete account</span>
